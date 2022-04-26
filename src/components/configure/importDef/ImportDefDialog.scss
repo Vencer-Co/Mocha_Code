@@ -1,0 +1,38 @@
+@import '../../../variables';
+
+.import-file-dialog {
+  .close-dialog {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    &:hover {
+      color: $primary-light;
+      cursor: pointer;
+    }
+  }
+
+  .import-file-content {
+    width: 540px;
+    height: 440px;
+
+    .import-success {
+      margin-top: $space-l;
+      .apply-definition {
+        padding: $space-m 0;
+        display: flex;
+        justify-content: flex-end;
+        button {
+          margin-left: $space-m;
+        }
+      }
+    }
+  }
+}
+
+.option-warning-message {
+  font-size: 90%;
+  line-height: 0.95rem;
+  color: $color-gray;
+  margin-bottom: $space-m;
+}

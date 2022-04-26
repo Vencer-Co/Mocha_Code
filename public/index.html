@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head prefix="og: http://ogp.me/ns#">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+    </script>
+
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Remap" />
+
+    <meta name="twitter:card" content="summary" />
+
+    <title>Remap</title>
+
+    <meta property="og:title" content="Remap" data-rh="true" />
+    <meta
+      name="description"
+      content="Remap allows you to configure key mappings and lighting of your keyboard with QMK firmware in Web Browser."
+      data-rh="true"
+    />
+    <meta
+      property="og:description"
+      content="Remap allows you to configure key mappings and lighting of your keyboard with QMK firmware in Web Browser."
+      data-rh="true"
+    />
+    <meta property="og:url" content="%PUBLIC_URL%" data-rh="true" />
+    <meta
+      property="og:image"
+      content="%PUBLIC_URL%/ogp_image.png"
+      data-rh="true"
+    />
+
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Remap",
+        "description": "Remap allows you to configure key mappings and lighting of your keyboard with QMK firmware in Web Browser.",
+        "url": "https://remap-keys.app",
+        "image": "https://remap-keys.app/ogp_image.png",
+        "applicationCategory": "UtilitiesApplication",
+        "operatingSystem": "Chromium-based Web Browsers",
+        "offers": {
+          "@type": "Offer",
+          "price": "0"
+        },
+        "browserRequirements": "requires Chrome or Edge 89 or higher",
+        "featureList": "Customize a key mapping of your keyboard, Save/restore/share your key mappings with other users, Test key switch matrix, Control LEDs",
+        "releaseNotes": "https://github.com/remap-keys/remap/wiki/Release-notes",
+        "keywords": "remap,keyboard,keymap,qmk,via,customize,led,diy,webhid"
+      }
+    </script>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

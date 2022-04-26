@@ -1,0 +1,27 @@
+@import '../../../variables';
+
+.layout-option-root {
+  .MuiPopover-paper {
+    overflow-x: visible;
+    overflow-y: visible;
+    margin-top: -12px;
+  }
+  .layout-option-popover {
+    width: 360px;
+    font-size: 0.9rem;
+
+    .layout-option-header {
+      padding: $space-l !important;
+    }
+
+    .layout-option-header {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      h2 {
+        margin: 0;
+      }
+      .layout-option-close-btn {
+        text-align: center;
+      }
+    }
+  }
+}

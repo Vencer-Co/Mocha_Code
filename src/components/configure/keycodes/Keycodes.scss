@@ -1,0 +1,108 @@
+@import '../../../variables';
+
+:root {
+  --switch-width: 140px;
+}
+
+.keycodes {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  .sub-category-group {
+    display: flex;
+    flex-direction: row;
+    &:hover {
+      .keycodekey {
+        border-color: $primary-light;
+      }
+      .sub-category {
+        span {
+          color: $primary-light;
+        }
+      }
+    }
+    .sub-category {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      text-align: right;
+      overflow-wrap: anywhere;
+      width: 90px;
+      min-width: 90px;
+      height: calc(var(--key-height));
+      border: 1px solid transparent;
+      margin-right: 8px;
+      margin-top: 8px;
+      span {
+        font-size: 0.72rem;
+        font-weight: 600;
+        padding: 0 2px;
+      }
+    }
+
+    .sub-category-keys {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+  }
+}
+.key-categories {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  padding: $space-m 0;
+  .blank-category {
+    width: var(--switch-width);
+  }
+  .key-category {
+    margin: 0 $space-m;
+    &.key-category-empty-keys {
+      button:disabled {
+        color: $color-gray-400;
+        background-color: #ffffff00;
+      }
+    }
+    button {
+      font-weight: 400;
+      background-color: #ffffff00;
+      &:disabled,
+      &:hover {
+        background-color: $primary-pale;
+      }
+      &:disabled {
+        color: white;
+      }
+      &:hover {
+        transition: background-color 0.5s;
+      }
+    }
+    .keycodes-search {
+      margin-top: -14px;
+      svg {
+        color: rgba(0, 0, 0, 0.7);
+      }
+    }
+  }
+  .keylayout-switch {
+    display: flex;
+    margin-left: auto;
+    width: var(--switch-width);
+  }
+}
+.macro-wrapper {
+  display: flex;
+  flex-direction: column;
+  .macro {
+    padding: 32px 64px;
+    textarea {
+      width: 100%;
+      height: 90px;
+      border: 1px solid rgba(0, 0, 0, 0.4);
+    }
+  }
+}

@@ -1,0 +1,26 @@
+@import '../../../variables';
+
+.keymap-menu {
+  display: flex;
+  width: 80px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 16px;
+  z-index: 2;
+
+  .keymap-menu-item {
+    margin-bottom: $space-m;
+
+    &:first-child,
+    &:last-child {
+      margin-top: auto;
+    }
+  }
+}
+
+.keymap-menu-item-submenu {
+  .MuiListItemIcon-root {
+    min-width: 36px;
+  }
+}

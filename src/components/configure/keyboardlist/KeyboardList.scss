@@ -1,0 +1,95 @@
+@import '../../../variables';
+
+.keyboardlist-wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: $space-xl;
+  background: white;
+  flex: 1 1;
+  .message {
+    padding: $space-m 0;
+    margin-bottom: $space-m;
+    font-size: 1rem;
+    text-align: center;
+
+    .arrow-animation {
+      width: 50px;
+      animation: fluffy 3s ease infinite;
+    }
+
+    @keyframes fluffy {
+      0% {
+        transform: translateX(0);
+      }
+      5% {
+        transform: translateX(0);
+      }
+      10% {
+        transform: translateX(0);
+      }
+      20% {
+        transform: translateX(-7px);
+      }
+      25% {
+        transform: translateX(0);
+      }
+      30% {
+        transform: translateX(7px);
+      }
+      50% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(0);
+      }
+    }
+  }
+  .keyboardlist {
+    width: 320px;
+    height: 304px;
+    overflow-y: scroll;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+
+    .keyboard-item {
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      border-left: 3px solid white;
+      padding: $space-m;
+      cursor: pointer;
+      &:hover {
+        border-left: 3px solid $primary;
+        background-color: $primary-pale;
+      }
+      h3 {
+        font-weight: 700;
+        font-size: 1.2rem;
+        margin: 0;
+        overflow-x: hidden;
+        &.another {
+          font-weight: 600;
+          font-size: 1rem;
+        }
+      }
+      .device-ids {
+        font-weight: 400;
+        font-size: 40%;
+      }
+    }
+  }
+
+  .opening-keyboard {
+    position: absolute;
+    width: 320px;
+    height: 342px;
+    background: rgba(255, 255, 255, 0.8);
+    .progress {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -12px;
+      margin-top: -12px;
+    }
+  }
+}

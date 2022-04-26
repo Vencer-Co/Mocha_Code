@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "remap-b2d08"
+  },
+  "targets": {
+    "remap-b2d08": {
+      "hosting": {
+        "user-site": [
+          "remap-b2d08"
+        ]
+      }
+    }
+  }
+}

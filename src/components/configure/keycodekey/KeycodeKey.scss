@@ -1,0 +1,89 @@
+@import '../../../variables';
+
+.keycodekey {
+  width: calc(var(--key-width));
+  height: calc(var(--key-height));
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  color: #333;
+  margin-right: 8px;
+  margin-top: 8px;
+  z-index: 1;
+  position: relative;
+  &:hover {
+    background-color: $primary-pale !important;
+  }
+
+  &.grabbable {
+    cursor: grab;
+  }
+
+  &.dragging {
+    cursor: grabbing;
+    z-index: 2;
+  }
+
+  &.dragging-keycodekey {
+  }
+
+  &.addkey {
+    border: 1px dashed #ccc;
+    &:hover {
+      background-color: $primary-pale;
+      transition: background-color 0.5s;
+    }
+  }
+
+  .edit-icon {
+    position: absolute;
+    bottom: 0;
+    right: 2px;
+    cursor: pointer;
+    svg {
+      width: 14px;
+      height: 14px;
+    }
+  }
+
+  .code-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.1;
+    font-size: 0.72rem;
+    overflow-wrap: anywhere;
+    overflow: hidden;
+    padding: $space-xs;
+    height: 40%;
+    .code-row {
+      display: flex;
+      width: 30%;
+      &.modifier-label {
+        justify-content: center;
+        align-items: center;
+      }
+    }
+    .code-row-center {
+      width: 40%;
+      justify-content: center;
+    }
+    .code-row-right {
+      color: #757575;
+      font-size: 0.6rem;
+    }
+  }
+
+  .code-label-expand {
+    flex-grow: 1;
+  }
+
+  .modifier-label {
+    height: 30%;
+    color: $color-gray-600;
+    font-size: 0.6rem;
+  }
+}

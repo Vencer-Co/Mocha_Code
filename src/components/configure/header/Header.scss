@@ -1,0 +1,362 @@
+@import '../../../_variables.scss';
+
+.header {
+  display: grid;
+  position: fixed;
+  height: calc(var(--key-height));
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin: 0;
+  padding: 0 $space-m;
+  background: white;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  .kbd-device {
+    display: flex;
+    flex-direction: row;
+    .kbd-select {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      cursor: pointer;
+
+      .kbd-name {
+        display: flex;
+        flex-direction: column;
+
+        h2 {
+          margin: 0;
+          max-width: calc(100vw / 3);
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+        .ids {
+          font-size: $font-xs;
+          color: $color-gray;
+          margin-top: -4px;
+        }
+      }
+
+      &:hover {
+        color: $primary;
+        .kbd-name {
+          .ids {
+            color: $primary;
+          }
+        }
+      }
+
+      .device-list {
+        display: flex;
+      }
+    }
+  }
+
+  .header-logo {
+    text-align: center;
+    height: 100%;
+    padding-top: 16px;
+  }
+
+  .header-height {
+    height: calc(var(--key-height));
+  }
+
+  .buttons {
+    display: flex;
+    margin-left: auto;
+    width: 120px;
+    justify-content: center;
+    height: 40px;
+    .flash-btn {
+      min-width: 80px !important;
+    }
+    .flash-loading {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-top: -12px;
+      margin-left: -12px;
+    }
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .header-avatar {
+    width: 31px !important;
+    height: 31px !important;
+  }
+}
+
+.device-item {
+  display: flex;
+  flex-direction: row;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  align-items: center;
+  width: 100%;
+
+  .link-icon {
+    margin-right: $space-m;
+  }
+  .link-on {
+    color: $primary;
+    font-weight: 700;
+  }
+  .link-off {
+    .device-name {
+      font-weight: 400;
+    }
+  }
+  .device-name {
+    display: flex;
+    align-items: center;
+    color: black;
+    .device-ids {
+      font-weight: 400;
+      font-size: 40%;
+      margin-left: $space-m;
+    }
+  }
+}
+
+.another-device-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  .another-device {
+    text-align: center;
+  }
+}
+
+/*==== FLASH BUTTON ====*/
+@keyframes button-disable-intro {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes button-enable-intro {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    border-color: $primary;
+    background-color: $primary;
+    opacity: 1;
+  }
+}
+@keyframes button-flashing {
+  0% {
+  }
+
+  20% {
+    color: transparent;
+    transform: scale(1, 1);
+  }
+
+  40% {
+    border-color: $primary;
+    background-color: transparent;
+    transform: scale(1, 1);
+  }
+
+  60% {
+    transform: scale(0.7, 1.1);
+    margin-left: 1.25rem;
+    width: 2.5rem;
+    text-indent: -0.6125rem;
+    color: transparent;
+    border-color: $primary;
+    background-color: $primary;
+  }
+
+  80% {
+    transform: scale(1, 1);
+  }
+
+  100% {
+    margin-left: 1.25rem;
+    width: 2.5rem;
+    background-color: $primary;
+    border-color: $primary;
+    color: transparent;
+  }
+}
+
+@keyframes button-dot-intro {
+  0% {
+    opacity: 0;
+  }
+
+  60% {
+    opacity: 0.8;
+    transform: scale(1, 1);
+  }
+
+  100% {
+    transform: scale(0.75, 0.75);
+  }
+}
+
+@keyframes button-dot-pulse {
+  0% {
+    opacity: 0.6;
+    transform: scale(0.75, 0.75);
+  }
+
+  15% {
+    transform: scale(0.85, 0.85);
+  }
+
+  45% {
+    transform: scale(0.75, 0.75);
+  }
+
+  75% {
+    transform: scale(0.95, 0.95);
+  }
+
+  100% {
+    opacity: 0.9;
+    transform: scale(0.75, 0.75);
+  }
+}
+
+@keyframes button-success {
+  0% {
+    margin-left: 1.25rem;
+    width: 2.5rem;
+  }
+
+  10% {
+    border-color: $primary;
+  }
+
+  20% {
+    opacity: 1;
+    margin: 0;
+    width: 7rem;
+    transform: scale(1, 1);
+  }
+
+  80% {
+    opacity: 1;
+    width: 7rem;
+    transform: scale(1, 1);
+    border-color: $primary;
+  }
+
+  100% {
+    border-color: $primary-pale;
+    opacity: 0;
+  }
+}
+
+@keyframes button-success-label {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+.flash-button {
+  position: relative;
+  overflow: hidden;
+  width: 7rem;
+  color: $primary-pale;
+  border: 3px solid $primary-pale;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 2;
+  margin: 0;
+  padding: 0;
+  border-radius: 1.5rem;
+  font-size: 1rem;
+  outline: none;
+  transition: transform 0.125s;
+
+  &.enable {
+    color: white;
+    animation: button-enable-intro 0.4s forwards;
+  }
+
+  &.disable {
+    cursor: not-allowed;
+    animation: button-disable-intro 0.5s forwards;
+  }
+
+  &:before,
+  &:after {
+    position: absolute;
+    opacity: 0;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin-top: -1.125rem;
+    margin-left: -1.125rem;
+    width: 2.25rem;
+    height: 2.25rem;
+
+    content: '';
+    z-index: 1;
+  }
+
+  &.flashing {
+    height: 40px;
+    animation: button-flashing 0.5s forwards;
+  }
+
+  &.flashing:before,
+  &.flashing:after {
+    background-color: #fff;
+  }
+
+  &.flashing:before {
+    opacity: 1;
+    animation: button-dot-intro 2.5s forwards;
+  }
+
+  &.flashing:after {
+    opacity: 0;
+    animation: button-dot-pulse 2.5s infinite;
+  }
+
+  &.success {
+    text-indent: 0;
+    color: transparent;
+    background-color: white;
+    animation: button-success 2.5s forwards;
+  }
+
+  &.success:before {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: auto;
+    margin: 0;
+    width: auto;
+    height: auto;
+    border-radius: 0;
+    background-color: transparent;
+    color: $primary;
+    content: 'success';
+    opacity: 0;
+    z-index: 2;
+    animation: button-success-label 0.3s forwards 0.275s;
+  }
+}
